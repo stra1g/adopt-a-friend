@@ -15,5 +15,12 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "semi": ["error", "always"],
+      "no-var": ["error"],
+      "prefer-const": ["warn"],
+      "prefer-template": ["warn"],
+      "no-extra-semi": ["error"],
+      "no-extra-parens": ["error"],
+      "no-console": ["off"]
     }
 }
