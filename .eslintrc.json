@@ -21,6 +21,9 @@
       "prefer-template": ["warn"],
       "no-extra-semi": ["error"],
       "no-extra-parens": ["error"],
-      "no-console": ["off"]
+      "no-console": ["off"],
+      "import/extensions": {
+        "ts": "never"
+      }
     }
 }
