@@ -14,8 +14,8 @@ export async function up(knex: Knex): Promise<void> {
     table.text('comments').nullable()
     table.uuid('user_id').references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE').notNullable()
 
-    table.timestamp('created_at').defaultTo((new Date()).toUTCString())
-    table.timestamp('updated_at').defaultTo(new Date().toUTCString())
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   });
 }
 

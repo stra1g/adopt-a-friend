@@ -8,8 +8,8 @@ export async function up(knex: Knex): Promise<void> {
     table.uuid('user_id').references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE').nullable()
     table.uuid('animal_id').references('id').inTable('animals').onUpdate('CASCADE').onDelete('CASCADE').nullable()
 
-    table.timestamp('created_at').defaultTo((new Date()).toUTCString())
-    table.timestamp('updated_at').defaultTo(new Date().toUTCString())
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   });
 }
 

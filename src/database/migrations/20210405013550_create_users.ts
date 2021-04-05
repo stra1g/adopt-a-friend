@@ -12,8 +12,8 @@ export async function up(knex: Knex): Promise<void> {
     table.text('neighborhood').notNullable()
     table.text('telephone').nullable()
 
-    table.timestamp('created_at').defaultTo((new Date()).toUTCString())
-    table.timestamp('updated_at').defaultTo(new Date().toUTCString())
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   });
 };
 
