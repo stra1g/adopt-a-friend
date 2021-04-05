@@ -6,6 +6,11 @@ export default {
       database: 'adopt_a_friend',
       user: 'postgres',
       password: 'postgres'
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: './database/migrations',
+      extension: 'ts'
     }
   },
 
