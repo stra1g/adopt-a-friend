@@ -15,7 +15,7 @@ class UserController {
       telephone 
     } = request.body
 
-    const passwordHashed = makeHash(password);
+    const passwordHashed = await makeHash(password);
 
     await knex('users').insert({
       name,
@@ -27,7 +27,7 @@ class UserController {
       telephone
     })
 
-    return response.status(200).json({message: 'user created'})
+    return response.status(201).json({message: 'user created'})
 
   };
 };
